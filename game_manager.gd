@@ -36,30 +36,26 @@ func button_pressed():
 			"1","2","3","4","5","6","7","8","9","0":
 				current_player_score += btn.text
 				user_answer_display.bbcode_text = "[right]%s[/right]" % current_player_score
-				$audio_manager/click_manager.play_sound($audio_manager/click_manager.keyclick_sounds)
+				$audio_manager.play_sound($audio_manager.keyclick_sounds)
 			"F":
 				current_player_score += "Fizz"
 				user_answer_display.bbcode_text = "[right]%s[/right]" % current_player_score
-				$audio_manager/click_manager.play_sound($audio_manager/click_manager.keyclick_sounds)				
+				$audio_manager.play_sound($audio_manager.keyclick_sounds)				
 			"B":
-				current_player_score += "Fizz"
+				current_player_score += "Buzz"
 				user_answer_display.bbcode_text = "[right]%s[/right]" % current_player_score
-				$audio_manager/click_manager.play_sound($audio_manager/click_manager.keyclick_sounds)				
+				$audio_manager.play_sound($audio_manager.keyclick_sounds)				
 			"DEL":
 				current_player_score = ""
 				user_answer_display.bbcode_text = ""
-				$audio_manager/click_manager.play_sound($audio_manager/click_manager.delete_sounds)
+				$audio_manager.play_sound($audio_manager.delete_sounds)
 			"ENTER":
 				if user_answer_display.bbcode_text != "":	# Only check if user has answered
-					result_checker(user_answer_display.bbcode_text, fizz_buzz_checker(counter+1))
+					result_checker(fizz_buzz_checker(counter+1))
 			_:
 				user_answer_display.bbcode_text = "Unsure..."
 
-
 func fizz_buzz_checker(check_counter: int):
-	# Takes in an int
-	# Returns a string
-	# Yes, check_counter is just counter+1
 	if check_counter%3==0 and check_counter%5==0:
 		return "FizzBuzz"
 	elif check_counter%3==0:
@@ -69,21 +65,30 @@ func fizz_buzz_checker(check_counter: int):
 	else:
 		return str(check_counter)
 		
-func result_checker(user_answer: String, required_answer: String):
+func result_checker(required_answer: String):
 	# Correct answer
-	if user_answer == required_answer:
-		$audio_manager/click_manager.play_sound($audio_manager/click_manager.victory_sounds)				
+	if current_player_score == required_answer:
+		$audio_manager.play_sound($audio_manager.victory_sounds)
+		$audio_manager.dragon_counting_player(counter)			
 		counter += 1
+		if counter == 30:
+			required_answer_display.text = "YOU WIN!!!  Press ENTER to restart"
+			game_over_state()
 		current_player_score = ""
 		required_answer_display.text = str(counter)
 		user_answer_display.bbcode_text = ""
 	# Wrong answer
 	else:
-		disable_all_buttons_except_enter()
 		required_answer_display.text = "OH NO!!! Press ENTER to restart"
-		$audio_manager/click_manager.play_sound($audio_manager/click_manager.defeat_sounds)				
-		high_score_checker()
-		game_over = true
+		$audio_manager.play_sound($audio_manager.defeat_sounds)	
+		$audio_manager.dragon_no_player()
+		game_over_state()
+
+func game_over_state():
+	disable_all_buttons_except_enter()
+	high_score_checker()
+	game_over = true
+
 
 func high_score_checker():
 	if counter >= high_score:
@@ -108,6 +113,3 @@ func disable_all_buttons_except_enter():
 func enable_all_buttons():
 	for btn in all_buttons:
 		btn.disabled = false
-		
-# func score_always_on_right(score: String):
-#	return "[right]%s[/right]" % score

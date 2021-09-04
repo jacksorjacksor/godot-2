@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fizz_buzz_dragon_bobby_newport.mp3-10faaf361205690b1487d5d1178fb3f6.mp3str"
+
+[deps]
+
+source_file="res://audio/mp3/fizz_buzz_dragon_bobby_newport.mp3"
+dest_files=[ "res://.import/fizz_buzz_dragon_bobby_newport.mp3-10faaf361205690b1487d5d1178fb3f6.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

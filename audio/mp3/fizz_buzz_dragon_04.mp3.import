@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fizz_buzz_dragon_04.mp3-97338e25643959aaa036a7f537f24afc.mp3str"
+
+[deps]
+
+source_file="res://audio/mp3/fizz_buzz_dragon_04.mp3"
+dest_files=[ "res://.import/fizz_buzz_dragon_04.mp3-97338e25643959aaa036a7f537f24afc.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
