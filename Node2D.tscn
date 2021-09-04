@@ -1,0 +1,264 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://button_group_controller.gd" type="Script" id=1]
+[ext_resource path="res://button_group_fizz_buzz_body.tres" type="ButtonGroup" id=2]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 0, 1.68179 )
+script = ExtResource( 1 )
+group = ExtResource( 2 )
+
+[node name="btn_1" type="Button" parent="."]
+margin_left = 384.0
+margin_top = 126.318
+margin_right = 464.0
+margin_bottom = 206.318
+rect_scale = Vector2( 0.985277, 1 )
+rect_pivot_offset = Vector2( 71, 72.3182 )
+toggle_mode = true
+group = ExtResource( 2 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_2" type="Button" parent="."]
+margin_left = 472.0
+margin_top = 126.318
+margin_right = 552.0
+margin_bottom = 206.318
+rect_pivot_offset = Vector2( 71, 72.3182 )
+toggle_mode = true
+group = ExtResource( 2 )
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_3" type="Button" parent="."]
+margin_left = 560.0
+margin_top = 126.318
+margin_right = 640.0
+margin_bottom = 206.318
+rect_pivot_offset = Vector2( 71, 72.3182 )
+toggle_mode = true
+group = ExtResource( 2 )
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_4" type="Button" parent="."]
+margin_left = 384.0
+margin_top = 214.318
+margin_right = 464.0
+margin_bottom = 294.318
+rect_pivot_offset = Vector2( 71, 72.3182 )
+toggle_mode = true
+group = ExtResource( 2 )
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_5" type="Button" parent="."]
+margin_left = 470.74
+margin_top = 214.318
+margin_right = 550.74
+margin_bottom = 294.318
+rect_pivot_offset = Vector2( 71, 72.3182 )
+toggle_mode = true
+group = ExtResource( 2 )
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_6" type="Button" parent="."]
+margin_left = 560.0
+margin_top = 214.318
+margin_right = 640.0
+margin_bottom = 294.318
+rect_pivot_offset = Vector2( 71, 72.3182 )
+toggle_mode = true
+group = ExtResource( 2 )
+text = "6"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_7" type="Button" parent="."]
+margin_left = 384.0
+margin_top = 302.318
+margin_right = 464.0
+margin_bottom = 382.318
+rect_pivot_offset = Vector2( 71, 72.3182 )
+toggle_mode = true
+group = ExtResource( 2 )
+text = "7"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_8" type="Button" parent="."]
+margin_left = 472.0
+margin_top = 302.318
+margin_right = 552.0
+margin_bottom = 382.318
+rect_pivot_offset = Vector2( 71, 72.3182 )
+toggle_mode = true
+group = ExtResource( 2 )
+text = "8"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_9" type="Button" parent="."]
+margin_left = 560.0
+margin_top = 302.318
+margin_right = 640.0
+margin_bottom = 382.318
+rect_pivot_offset = Vector2( 71, 72.3182 )
+toggle_mode = true
+group = ExtResource( 2 )
+text = "9"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_0" type="Button" parent="."]
+margin_left = 472.0
+margin_top = 390.318
+margin_right = 552.0
+margin_bottom = 470.318
+rect_pivot_offset = Vector2( 71, 72.3182 )
+toggle_mode = true
+group = ExtResource( 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_fizz" type="Button" parent="."]
+margin_left = 382.74
+margin_top = 390.318
+margin_right = 462.74
+margin_bottom = 470.318
+rect_pivot_offset = Vector2( 71, 72.3182 )
+toggle_mode = true
+group = ExtResource( 2 )
+text = "F"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_buzz" type="Button" parent="."]
+margin_left = 560.0
+margin_top = 390.318
+margin_right = 640.0
+margin_bottom = 470.318
+rect_pivot_offset = Vector2( 71, 72.3182 )
+toggle_mode = true
+group = ExtResource( 2 )
+text = "B"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_cancel" type="Button" parent="."]
+margin_left = 472.0
+margin_top = 478.0
+margin_right = 640.0
+margin_bottom = 558.0
+rect_pivot_offset = Vector2( 71, 72.3182 )
+toggle_mode = true
+group = ExtResource( 2 )
+text = "ENTER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_delete" type="Button" parent="."]
+margin_left = 384.0
+margin_top = 478.318
+margin_right = 464.0
+margin_bottom = 558.318
+rect_pivot_offset = Vector2( 71, 72.3182 )
+toggle_mode = true
+group = ExtResource( 2 )
+text = "DEL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="user_answer_label" type="RichTextLabel" parent="."]
+margin_left = 388.0
+margin_top = 74.0
+margin_right = 644.0
+margin_bottom = 95.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Your answer:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="user_answer_display" type="RichTextLabel" parent="."]
+margin_left = 388.0
+margin_top = 96.0
+margin_right = 638.0
+margin_bottom = 115.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "User answer display"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="required_answer_label" type="RichTextLabel" parent="."]
+margin_left = 387.0
+margin_top = 29.0
+margin_right = 644.0
+margin_bottom = 47.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Previous number:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="required_answer_display" type="RichTextLabel" parent="."]
+margin_left = 388.0
+margin_top = 53.0
+margin_right = 517.0
+margin_bottom = 71.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Previous answer display"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="high_score_label" type="RichTextLabel" parent="."]
+margin_left = 563.0
+margin_top = 29.0
+margin_right = 638.0
+margin_bottom = 47.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "High score:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="high_score_display" type="RichTextLabel" parent="."]
+margin_left = 545.0
+margin_top = 51.0
+margin_right = 634.0
+margin_bottom = 73.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "High score display"
+__meta__ = {
+"_edit_use_anchors_": false
+}
