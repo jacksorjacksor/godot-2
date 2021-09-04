@@ -1,21 +1,110 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=33 format=2]
 
-[ext_resource path="res://button_group_controller.gd" type="Script" id=1]
+[ext_resource path="res://game_manager.gd" type="Script" id=1]
 [ext_resource path="res://button_group_fizz_buzz_body.tres" type="ButtonGroup" id=2]
+[ext_resource path="res://audio_manager.gd" type="Script" id=3]
+[ext_resource path="res://zx-times-dynamic-font.tres" type="DynamicFont" id=4]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="InputEventAction" id=1]
+action = "1"
+
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
+
+[sub_resource type="InputEventAction" id=3]
+action = "2"
+
+[sub_resource type="ShortCut" id=4]
+shortcut = SubResource( 3 )
+
+[sub_resource type="InputEventAction" id=5]
+action = "3"
+
+[sub_resource type="ShortCut" id=6]
+shortcut = SubResource( 5 )
+
+[sub_resource type="InputEventAction" id=7]
+action = "4"
+
+[sub_resource type="ShortCut" id=8]
+shortcut = SubResource( 7 )
+
+[sub_resource type="InputEventAction" id=9]
+action = "5"
+
+[sub_resource type="ShortCut" id=10]
+shortcut = SubResource( 9 )
+
+[sub_resource type="InputEventAction" id=11]
+action = "6"
+
+[sub_resource type="ShortCut" id=12]
+shortcut = SubResource( 11 )
+
+[sub_resource type="InputEventAction" id=13]
+action = "7"
+
+[sub_resource type="ShortCut" id=14]
+shortcut = SubResource( 13 )
+
+[sub_resource type="InputEventAction" id=15]
+action = "8"
+
+[sub_resource type="ShortCut" id=16]
+shortcut = SubResource( 15 )
+
+[sub_resource type="InputEventAction" id=17]
+action = "9"
+
+[sub_resource type="ShortCut" id=18]
+shortcut = SubResource( 17 )
+
+[sub_resource type="InputEventAction" id=19]
+action = "0"
+
+[sub_resource type="ShortCut" id=20]
+shortcut = SubResource( 19 )
+
+[sub_resource type="InputEventAction" id=21]
+action = "f"
+
+[sub_resource type="ShortCut" id=22]
+shortcut = SubResource( 21 )
+
+[sub_resource type="InputEventAction" id=23]
+action = "b"
+
+[sub_resource type="ShortCut" id=24]
+shortcut = SubResource( 23 )
+
+[sub_resource type="InputEventAction" id=25]
+action = "ui_accept"
+
+[sub_resource type="ShortCut" id=26]
+shortcut = SubResource( 25 )
+
+[sub_resource type="InputEventAction" id=27]
+action = "del"
+
+[sub_resource type="ShortCut" id=28]
+shortcut = SubResource( 27 )
+
+[node name="root_node" type="Node2D"]
 position = Vector2( 0, 1.68179 )
 script = ExtResource( 1 )
 group = ExtResource( 2 )
 
 [node name="btn_1" type="Button" parent="."]
+anchor_right = 0.308
 margin_left = 384.0
-margin_top = 126.318
+margin_top = 230.318
 margin_right = 464.0
-margin_bottom = 206.318
+margin_bottom = 290.318
 rect_scale = Vector2( 0.985277, 1 )
 rect_pivot_offset = Vector2( 71, 72.3182 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = true
+shortcut = SubResource( 2 )
 group = ExtResource( 2 )
 text = "1"
 __meta__ = {
@@ -24,11 +113,13 @@ __meta__ = {
 
 [node name="btn_2" type="Button" parent="."]
 margin_left = 472.0
-margin_top = 126.318
+margin_top = 230.318
 margin_right = 552.0
-margin_bottom = 206.318
+margin_bottom = 290.318
 rect_pivot_offset = Vector2( 71, 72.3182 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = true
+shortcut = SubResource( 4 )
 group = ExtResource( 2 )
 text = "2"
 __meta__ = {
@@ -37,11 +128,13 @@ __meta__ = {
 
 [node name="btn_3" type="Button" parent="."]
 margin_left = 560.0
-margin_top = 126.318
+margin_top = 230.318
 margin_right = 640.0
-margin_bottom = 206.318
+margin_bottom = 290.318
 rect_pivot_offset = Vector2( 71, 72.3182 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = true
+shortcut = SubResource( 6 )
 group = ExtResource( 2 )
 text = "3"
 __meta__ = {
@@ -50,11 +143,13 @@ __meta__ = {
 
 [node name="btn_4" type="Button" parent="."]
 margin_left = 384.0
-margin_top = 214.318
+margin_top = 302.318
 margin_right = 464.0
-margin_bottom = 294.318
+margin_bottom = 362.318
 rect_pivot_offset = Vector2( 71, 72.3182 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = true
+shortcut = SubResource( 8 )
 group = ExtResource( 2 )
 text = "4"
 __meta__ = {
@@ -62,12 +157,14 @@ __meta__ = {
 }
 
 [node name="btn_5" type="Button" parent="."]
-margin_left = 470.74
-margin_top = 214.318
-margin_right = 550.74
-margin_bottom = 294.318
+margin_left = 472.0
+margin_top = 302.318
+margin_right = 552.0
+margin_bottom = 362.318
 rect_pivot_offset = Vector2( 71, 72.3182 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = true
+shortcut = SubResource( 10 )
 group = ExtResource( 2 )
 text = "5"
 __meta__ = {
@@ -76,11 +173,13 @@ __meta__ = {
 
 [node name="btn_6" type="Button" parent="."]
 margin_left = 560.0
-margin_top = 214.318
+margin_top = 302.318
 margin_right = 640.0
-margin_bottom = 294.318
+margin_bottom = 362.318
 rect_pivot_offset = Vector2( 71, 72.3182 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = true
+shortcut = SubResource( 12 )
 group = ExtResource( 2 )
 text = "6"
 __meta__ = {
@@ -89,11 +188,13 @@ __meta__ = {
 
 [node name="btn_7" type="Button" parent="."]
 margin_left = 384.0
-margin_top = 302.318
+margin_top = 374.318
 margin_right = 464.0
-margin_bottom = 382.318
+margin_bottom = 434.318
 rect_pivot_offset = Vector2( 71, 72.3182 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = true
+shortcut = SubResource( 14 )
 group = ExtResource( 2 )
 text = "7"
 __meta__ = {
@@ -102,11 +203,13 @@ __meta__ = {
 
 [node name="btn_8" type="Button" parent="."]
 margin_left = 472.0
-margin_top = 302.318
+margin_top = 374.318
 margin_right = 552.0
-margin_bottom = 382.318
+margin_bottom = 434.318
 rect_pivot_offset = Vector2( 71, 72.3182 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = true
+shortcut = SubResource( 16 )
 group = ExtResource( 2 )
 text = "8"
 __meta__ = {
@@ -115,11 +218,13 @@ __meta__ = {
 
 [node name="btn_9" type="Button" parent="."]
 margin_left = 560.0
-margin_top = 302.318
+margin_top = 374.318
 margin_right = 640.0
-margin_bottom = 382.318
+margin_bottom = 434.318
 rect_pivot_offset = Vector2( 71, 72.3182 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = true
+shortcut = SubResource( 18 )
 group = ExtResource( 2 )
 text = "9"
 __meta__ = {
@@ -127,12 +232,14 @@ __meta__ = {
 }
 
 [node name="btn_0" type="Button" parent="."]
-margin_left = 472.0
-margin_top = 390.318
-margin_right = 552.0
-margin_bottom = 470.318
+margin_left = 473.26
+margin_top = 446.318
+margin_right = 553.26
+margin_bottom = 506.318
 rect_pivot_offset = Vector2( 71, 72.3182 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = true
+shortcut = SubResource( 20 )
 group = ExtResource( 2 )
 text = "0"
 __meta__ = {
@@ -140,12 +247,14 @@ __meta__ = {
 }
 
 [node name="btn_fizz" type="Button" parent="."]
-margin_left = 382.74
-margin_top = 390.318
-margin_right = 462.74
-margin_bottom = 470.318
+margin_left = 384.0
+margin_top = 446.318
+margin_right = 464.0
+margin_bottom = 506.318
 rect_pivot_offset = Vector2( 71, 72.3182 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = true
+shortcut = SubResource( 22 )
 group = ExtResource( 2 )
 text = "F"
 __meta__ = {
@@ -154,24 +263,28 @@ __meta__ = {
 
 [node name="btn_buzz" type="Button" parent="."]
 margin_left = 560.0
-margin_top = 390.318
+margin_top = 446.318
 margin_right = 640.0
-margin_bottom = 470.318
+margin_bottom = 506.318
 rect_pivot_offset = Vector2( 71, 72.3182 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = true
+shortcut = SubResource( 24 )
 group = ExtResource( 2 )
 text = "B"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="btn_cancel" type="Button" parent="."]
+[node name="btn_enter" type="Button" parent="."]
 margin_left = 472.0
-margin_top = 478.0
+margin_top = 518.318
 margin_right = 640.0
-margin_bottom = 558.0
+margin_bottom = 578.318
 rect_pivot_offset = Vector2( 71, 72.3182 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = true
+shortcut = SubResource( 26 )
 group = ExtResource( 2 )
 text = "ENTER"
 __meta__ = {
@@ -180,11 +293,13 @@ __meta__ = {
 
 [node name="btn_delete" type="Button" parent="."]
 margin_left = 384.0
-margin_top = 478.318
+margin_top = 518.318
 margin_right = 464.0
-margin_bottom = 558.318
+margin_bottom = 578.318
 rect_pivot_offset = Vector2( 71, 72.3182 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = true
+shortcut = SubResource( 28 )
 group = ExtResource( 2 )
 text = "DEL"
 __meta__ = {
@@ -192,73 +307,142 @@ __meta__ = {
 }
 
 [node name="user_answer_label" type="RichTextLabel" parent="."]
-margin_left = 388.0
-margin_top = 74.0
-margin_right = 644.0
-margin_bottom = 95.0
+margin_left = 384.0
+margin_top = 150.318
+margin_right = 640.0
+margin_bottom = 171.318
 grow_horizontal = 0
 grow_vertical = 0
+rect_pivot_offset = Vector2( 208, 32 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 4 )
 text = "Your answer:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="user_answer_display" type="RichTextLabel" parent="."]
-margin_left = 388.0
-margin_top = 96.0
-margin_right = 638.0
-margin_bottom = 115.0
+[node name="title" type="RichTextLabel" parent="."]
+margin_left = 384.0
+margin_top = 6.31821
+margin_right = 504.0
+margin_bottom = 62.3182
 grow_horizontal = 0
 grow_vertical = 0
-text = "User answer display"
+rect_pivot_offset = Vector2( 208, 32 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_constants/line_separation = 4
+custom_constants/shadow_as_outline = 10
+text = "fizz
+buzz
+DRAGON"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="user_answer_display" type="RichTextLabel" parent="."]
+margin_left = 384.0
+margin_top = 182.318
+margin_right = 520.0
+margin_bottom = 206.318
+grow_horizontal = 0
+grow_vertical = 0
+rect_scale = Vector2( 1.87298, 1.87298 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="required_answer_label" type="RichTextLabel" parent="."]
-margin_left = 387.0
-margin_top = 29.0
-margin_right = 644.0
-margin_bottom = 47.0
+margin_left = 384.0
+margin_top = 78.3182
+margin_right = 672.0
+margin_bottom = 114.318
 grow_horizontal = 0
 grow_vertical = 0
+rect_scale = Vector2( 0.892565, 1.09988 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 4 )
 text = "Previous number:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="required_answer_display" type="RichTextLabel" parent="."]
-margin_left = 388.0
-margin_top = 53.0
-margin_right = 517.0
-margin_bottom = 71.0
+margin_left = 384.0
+margin_top = 102.0
+margin_right = 640.0
+margin_bottom = 158.0
 grow_horizontal = 0
 grow_vertical = 0
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 4 )
 text = "Previous answer display"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="high_score_label" type="RichTextLabel" parent="."]
-margin_left = 563.0
-margin_top = 29.0
-margin_right = 638.0
-margin_bottom = 47.0
+margin_left = 512.0
+margin_top = 6.31821
+margin_right = 713.0
+margin_bottom = 43.3182
 grow_horizontal = 0
 grow_vertical = 0
+rect_scale = Vector2( 0.637604, 0.637604 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 4 )
 text = "High score:"
+fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="high_score_display" type="RichTextLabel" parent="."]
-margin_left = 545.0
-margin_top = 51.0
-margin_right = 634.0
-margin_bottom = 73.0
+margin_left = 512.0
+margin_top = 22.3182
+margin_right = 625.0
+margin_bottom = 44.3182
 grow_horizontal = 0
 grow_vertical = 0
-text = "High score display"
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[right]{text}[/right]"
+text = "{text}"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="audio_manager" type="Node2D" parent="."]
+position = Vector2( 521.256, 300.888 )
+
+[node name="click_manager" type="AudioStreamPlayer2D" parent="audio_manager"]
+script = ExtResource( 3 )
+
+[node name="keyclick_stream" type="AudioStreamPlayer2D" parent="audio_manager"]
+
+[node name="defeat_victory_stream" type="AudioStreamPlayer2D" parent="audio_manager"]
