@@ -77,11 +77,12 @@ func result_checker(required_answer: String):
 		$audio_manager.dragon_counting_player(counter)			
 		counter += 1
 		if counter == 30:
-			required_answer_display.text = "YOU WIN!!!  Press ENTER to restart"
+			required_answer_display.text = "YOU WIN!!!"
 			game_over_state()
-		current_player_score = ""
-		required_answer_display.text = str(counter)
-		user_answer_display.bbcode_text = ""
+		else:
+			current_player_score = ""
+			required_answer_display.text = str(counter)
+			user_answer_display.bbcode_text = ""
 	# Wrong answer
 	else:
 		required_answer_display.text = "OH NO!!! Press ENTER to restart"
