@@ -11,5 +11,5 @@ dest_files=[ "res://.import/fizz-buzz-dragon-intro-sound.mp3-034bc12518c0d7f2f51
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

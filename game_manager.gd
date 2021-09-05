@@ -8,6 +8,9 @@ var high_score: int = 0
 var game_over: bool = false
 var all_buttons: Array
 
+var parks_and_rec_checker: String = ""
+var parks_and_rec_required: String = "parksandrec"
+
 onready var user_answer_display = self.get_node("user_answer_display")
 onready var required_answer_display = self.get_node("required_answer_display")
 onready var high_score_display = self.get_node("high_score_display")
@@ -52,6 +55,8 @@ func button_pressed():
 			"ENTER":
 				if user_answer_display.bbcode_text != "":	# Only check if user has answered
 					result_checker(fizz_buzz_checker(counter+1))
+#			"P","A","R","K","S","N","D","E","C":
+#				pass
 			_:
 				user_answer_display.bbcode_text = "Unsure..."
 
@@ -80,6 +85,7 @@ func result_checker(required_answer: String):
 	# Wrong answer
 	else:
 		required_answer_display.text = "OH NO!!! Press ENTER to restart"
+		user_answer_display.bbcode_text = "[right]%s [s]%s[/s][/right]" % [fizz_buzz_checker(counter+1), current_player_score]
 		$audio_manager.play_sound($audio_manager.defeat_sounds)	
 		$audio_manager.dragon_no_player()
 		game_over_state()
@@ -93,7 +99,7 @@ func game_over_state():
 func high_score_checker():
 	if counter >= high_score:
 		high_score = counter
-		high_score_display.bbcode_text = "[right]"+str(high_score)+"[/right]"
+		high_score_display.bbcode_text = "[right]"+str(high_score)+"/30[/right]"
 		# New high score?
 
 func restart_the_game():
@@ -104,6 +110,7 @@ func restart_the_game():
 	user_answer_display.bbcode_text=current_player_score
 	game_over = false
 	enable_all_buttons()
+	$audio_manager.dragon_begin()
 	
 func disable_all_buttons_except_enter():
 	for btn in all_buttons:
@@ -113,3 +120,47 @@ func disable_all_buttons_except_enter():
 func enable_all_buttons():
 	for btn in all_buttons:
 		btn.disabled = false
+
+func _input(event):
+	if event.is_action_pressed("p") or event.is_action_pressed("a") or event.is_action_pressed("r") or event.is_action_pressed("k") or event.is_action_pressed("s") or event.is_action_pressed("n") or event.is_action_pressed("d") or event.is_action_pressed("e") or event.is_action_pressed("c"):
+		match parks_and_rec_checker.length():
+			0:
+				parks_and_rec_match_checker(event, "p")
+			1:
+				parks_and_rec_match_checker(event, "a")
+			2:
+				parks_and_rec_match_checker(event, "r")
+			3:
+				parks_and_rec_match_checker(event, "k")
+			4:
+				parks_and_rec_match_checker(event, "s")
+			5:
+				parks_and_rec_match_checker(event, "a")
+			6:
+				parks_and_rec_match_checker(event, "n")
+			7:
+				parks_and_rec_match_checker(event, "d")
+			8:
+				parks_and_rec_match_checker(event, "r")
+			9:
+				parks_and_rec_match_checker(event, "e")
+			10: 
+				parks_and_rec_match_checker(event, "c")
+
+	
+	# match event.is_action_pressed(["P","A","R","K","S","N","D","E","C"]):
+
+func parks_and_rec_match_checker(event, action_name:String):
+	if event.is_action_pressed(action_name):
+		parks_and_rec_checker += action_name
+		if parks_and_rec_checker.length() == 11:
+			bobby_newport()
+	else:
+		parks_and_rec_checker = ""	
+
+
+
+# Parks and rec
+func bobby_newport():
+	$audio_manager.dragon_bobby_newport()
+
